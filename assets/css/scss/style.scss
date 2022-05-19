@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import "variables";
+
+@mixin marginTP {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+@mixin paddingLR {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: $backgroundColor2;
+}
+
+/*NavBar*/
+
+.navbar {
+
+    .navbar-brand:hover {
+        color: red;
+    }
+    
+    a {
+        font-size: $FontSizeH1;
+        color: $FontColor;
+        text-decoration: none;
+        @include paddingLR();
+    }
+
+    a:hover {
+        color: red;
+    }
+}
+
+/*Contenido*/
+
+.parrafo {
+    color: $FontColor;
+    @include marginTP();
+
+    h1 {
+        font-size: $FontSizeH1;
+    }
+
+    p {
+        font-size: $FontSizeP;
+
+        a:hover {
+            color: red;
+        }
+    }
+
+}
+
+/*Pie de pagina*/
+
+footer {
+    ul {
+        li {
+            text-decoration: none;
+
+            a:hover {
+                color: red;
+            }
+        }
+    }
+
+    p {
+        text-decoration: none;
+        color: $FontColor;
+
+        a:hover {
+            color: red;
+        }
+    }
+}
