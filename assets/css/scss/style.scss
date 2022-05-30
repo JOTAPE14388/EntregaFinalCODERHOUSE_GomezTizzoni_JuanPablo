@@ -3,16 +3,37 @@
     padding: 0;
 }
 
+/*Imports*/
+
 @import "variables";
 
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+/*Mixins*/
+
 @mixin marginTP {
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 @mixin paddingLR {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+@mixin H1style {
+    font-family: 'Koulen', cursive;
+    font-size: $FontSizeH1;
+}
+
+@mixin H2style {
+    font-family: 'Koulen', cursive;
+    font-size: $FontSizeH2;
+}
+
+@mixin H5style {
+    font-family: 'Koulen', cursive;
+    font-size: $FontSizeH5;
 }
 
 body {
@@ -26,10 +47,12 @@ body {
 
 .navbar {
 
+    font-family: 'Koulen', cursive;
+
     .navbar-brand:hover {
         color: red;
     }
-    
+
     a {
         font-size: $FontSizeH1;
         color: $FontColor;
@@ -49,7 +72,11 @@ body {
     @include marginTP();
 
     h1 {
-        font-size: $FontSizeH1;
+        @include H1style();
+    }
+
+    h2 {
+        @include H2style();
     }
 
     p {
@@ -62,18 +89,64 @@ body {
 
 }
 
+/*Tarjetas*/
+
+.tarjetas {
+    display: flex;
+    justify-content: space-between;
+    height: 400px !important;
+
+    .card {
+        .card-body{
+            height: 350px;
+        }   
+    }
+}
+
+h5 {
+    @include H5style();
+}
+
+p {
+    font-size: $FontSizeP;
+}
+
+/*Formulario*/
+
+.formulario {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.form-label {
+    @include H5style();
+    color: $FontColor;
+}
+
+/*Tarjetas trabajo*/
+
+.card-group{
+    display: flex;
+    justify-content: space-between;
+    @include marginTP();
+
+    img{
+        max-height: 280px;
+    }
+}
+
 /*Pie de pagina*/
 
 footer {
-    ul {
-        li {
-            text-decoration: none;
-
-            a:hover {
-                color: red;
-            }
+    
+    .nav{
+        a:hover {
+            color: red;
         }
     }
+            
+            
+      
 
     p {
         text-decoration: none;
